@@ -30,8 +30,8 @@ int main()
     cout << "moin" << endl;
 
 	//Adding People (FirstName, LastName, BirthdateDay, BirthdateMonth, BirthdateYear, Money, Car, Gender)
-	Person PlantBoi = Person("Humphry", "Van Plant", 1, "November", 2022, 10, "Car go BRR", "male");
-	Person Cactus = Person("Charlotte", "the Catus", 10, "September", 2020, 4, "Car go BRR", "non-binary");
+	Person PlantBoi = Person("Humphry", "Van Plant", 1, "November", 2022, 10000, "Car go BRR", "male");
+	Person Cactus = Person("Charlotte", "the Catus", 10, "September", 2020, 20000, "Car go BRR", "non-binary");
 
 	//Adding Cars (Color, Brand, Model, LicensePlate, Year, Mileage, CostValue)
 	Car PlantBoisCar = Car(Car_Color::green, "Opel", "Zafira Life", "WI-HP-00", 2020, 1000, 5938);
@@ -40,15 +40,45 @@ int main()
 
 
 	//line 1
-	cout << "> The person " << PlantBoi.GetFirstName() << " was created. \n";
+	cout << "> The person " << Cactus.GetFirstName() << " was created. \n";
 	//line 2
-	PlantBoi.Introduce(); //done
+	Cactus.Introduce();
 	//line 3
-	cout << "> " << PlantBoi.GetFirstName() << " has " << PlantBoi.GetMoney() << "EURO and " << PlantBoi.GetCar() << ". \n";
+	cout << "> " << Cactus.GetFirstName() << " has " << Cactus.GetMoney() << "EURO and " << Cactus.GetCar() << ". \n"; //will change car
 
 	cout << "\n";
  
-
 	//line 4
-	cout << "The car " << PlantBoisCar.GetBrand << PlantBoisCar.GetModel << "was created. \n";
+	cout << "The car " << PlantBoisCar.GetBrand() << PlantBoisCar.GetModel() << "was created. \n";
+	//line 5
+	cout << "> It is " << PlantBoisCar.GetColor() << " with the license plate " << PlantBoisCar.GetLicensePlate() << ". \n";
+	//line 6
+	cout << "> With a mileage of " << PlantBoisCar.GetMileage() << "KM, it has a value of " << PlantBoisCar.GetCostValue() << "EURO. \n";
+
+	cout << "\n";
+
+	//line 7
+	cout << "> The person " << PlantBoi.GetFirstName() << " was created. \n";
+	//line 8
+	cout << "> " << PlantBoi.Introduce() << "\n"; 
+	//line 9
+	cout << "> " << PlantBoi.GetFirstName() << " has " << PlantBoi.GetMoney() << "EURO and " << PlantBoisCar.DisplaySumUp() << ". \n";
+
+	cout << "\n";
+
+	//line 10 will be changed
+	cout << "> " << PlantBoi.GetFirstName() << " sells their car to " << Cactus.GetFirstName() << " . \n";
+	//line 11
+	cout << "> " << PlantBoi.GetFirstName() << " earned " << PlantBoisCar.GetCostValue() << "EURO, they now have " << PlantBoi.GetMoney() + PlantBoisCar.GetCostValue() << "EURO. \n";
+	//line 12
+	cout << "> " << Cactus.GetFirstName() << " spent " << PlantBoisCar.GetCostValue() << "EURO, they now have " << Cactus.GetMoney() - PlantBoisCar.GetCostValue() << "EURO. \n";
+
+	cout << "\n";
+
+	//line 13
+	cout << "> " << Cactus.Introduce() << "\n";
+	//line 14
+	cout << "> " << Cactus.GetFirstName() << " has now " << Cactus.GetMoney() - PlantBoisCar.GetCostValue() << "EURO and a " << PlantBoisCar.DisplaySumUp() << ". \n";
+	//line 15
+
 }
